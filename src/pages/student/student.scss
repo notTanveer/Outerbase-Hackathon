@@ -1,0 +1,29 @@
+@import "../../css-config/mixins.scss";
+.student-dashboard {
+  padding: 10px;
+  padding-left: 20px;
+  .student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .name {
+      font-size: 28px;
+      text-transform: capitalize;
+      @include md {
+        font-size: 40px;
+      }
+    }
+    .profile-options {
+      display: flex;
+      gap: 5px;
+      font-size: 18px;
+      @include md {
+        gap: 10px;
+      }
+    }
+  }
+  .course-details {
+    font-size: 18px;
+    color: rgba($color: #000000, $alpha: 0.8);
+  }
+}
