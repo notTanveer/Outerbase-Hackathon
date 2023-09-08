@@ -3,6 +3,7 @@ import React from "react";
 import "./student.scss";
 import { CgProfile } from "react-icons/cg";
 import Routine from "./Routine";
+import Syllabus from "./Syllabus/Syllabus";
 
 function StudentDashboard() {
   return (
@@ -22,6 +23,7 @@ function StudentDashboard() {
         ABC Batch - JEE Advanced
       </div>
       <div className="main-page">
+        <Syllabus />
         <Routine />
       </div>
     </div>

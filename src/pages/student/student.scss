@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
     .name {
       font-size: 28px;
       text-transform: capitalize;
@@ -15,10 +16,14 @@
     }
     .profile-options {
       display: flex;
+      align-items: center;
       gap: 5px;
       font-size: 18px;
       @include md {
         gap: 10px;
+      }
+      .profile-pic {
+        font-size: 30px;
       }
     }
   }
@@ -27,8 +32,9 @@
     color: rgba($color: #000000, $alpha: 0.8);
   }
   .main-page {
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
