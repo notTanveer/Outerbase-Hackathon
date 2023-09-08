@@ -1,5 +1,4 @@
 import React from "react";
-import "./syllabus.scss";
 import SyllabusItem from "./SyllabusItem";
 //A horizontal scrollable syllabus view
 function Syllabus() {
