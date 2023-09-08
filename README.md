@@ -71,7 +71,7 @@ Follow these steps to get started with the Ed-Tech Platform:
 ### Deployment:
 
 - [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) for containerization and orchestration
-- [Azure Cloud Services]((https://azure.microsoft.com/)) for cloud hosting
+- [Azure Cloud Services](https://azure.microsoft.com/) for cloud hosting
 
 ## Contributing
 - We welcome contributions from the community!
