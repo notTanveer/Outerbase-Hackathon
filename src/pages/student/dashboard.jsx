@@ -2,6 +2,7 @@
 import React from "react";
 import "./student.scss";
 import { CgProfile } from "react-icons/cg";
+import Routine from "./Routine";
 
 function StudentDashboard() {
   return (
@@ -19,6 +20,9 @@ function StudentDashboard() {
       <div className="course-details">
         {/* THis includes course details  */}
         ABC Batch - JEE Advanced
+      </div>
+      <div className="main-page">
+        <Routine />
       </div>
     </div>
   );
