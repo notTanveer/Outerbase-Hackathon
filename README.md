@@ -59,6 +59,7 @@ Follow these steps to get started with the Ed-Tech Platform:
 
 ### Backend:
 
+- [Mailgun](https://www.mailgun.com/) for email verification
 - [Node.js](https://nodejs.org/) for server-side development
 - [Express.js](https://expressjs.com/) for building RESTful APIs
 - [MongoDB](https://www.mongodb.com/) for data storage
@@ -75,11 +76,11 @@ Follow these steps to get started with the Ed-Tech Platform:
 ## Contributing
 - We welcome contributions from the community!
 - If you'd like to contribute to the project, please follow our Contribution Guidelines.
-- See CONTRIBUTING.md for details.
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
-- This project is licensed under the MIT License.
-- See LICENSE for more information.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 
