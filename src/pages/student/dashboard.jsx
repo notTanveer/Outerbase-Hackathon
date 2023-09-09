@@ -4,6 +4,7 @@ import "./student.scss";
 import { CgProfile } from "react-icons/cg";
 import Routine from "./Routine";
 import Syllabus from "./Syllabus/Syllabus";
+import FeeStructure from "./Fee_Structure";
 
 function StudentDashboard() {
   return (
@@ -23,8 +24,13 @@ function StudentDashboard() {
         ABC Batch - JEE Advanced
       </div>
       <div className="main-page">
-        <Syllabus />
-        <Routine />
+        <div className="main-mid">
+          <Syllabus />
+        </div>
+        <div className="aside">
+          <Routine />
+          <FeeStructure />
+        </div>
       </div>
     </div>
   );

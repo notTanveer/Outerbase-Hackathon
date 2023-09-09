@@ -15,6 +15,8 @@ function Syllabus() {
         <SyllabusItem />
         <SyllabusItem />
         <SyllabusItem />
+        <SyllabusItem />
+        <SyllabusItem />
       </div>
     </div>
   );
