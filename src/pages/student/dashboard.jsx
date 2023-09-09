@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import Routine from "./Routine";
 import Syllabus from "./Syllabus/Syllabus";
 import FeeStructure from "./Fee_Structure";
+import Learn from "./Learn/learn";
 
 function StudentDashboard() {
   return (
@@ -25,6 +26,7 @@ function StudentDashboard() {
       </div>
       <div className="main-page">
         <div className="main-mid">
+          <Learn />
           <Syllabus />
         </div>
         <div className="aside">
