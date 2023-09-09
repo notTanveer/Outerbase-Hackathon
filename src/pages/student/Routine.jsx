@@ -1,5 +1,8 @@
 import React from "react";
+
 import RoutineItem from "./routineItem";
+import "./routine.scss";
+
 function Routine() {
   return (
     <div className="routine-main">

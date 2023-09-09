@@ -1,0 +1,28 @@
+$primary: #3f51b5;
+
+nav {
+  background: $primary;
+  color: white;
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    
+    li {
+      display: inline-block;
+      
+      a {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      &:hover {
+        background: darken($primary, 10%);
+      }
+    }
+  }
+}
