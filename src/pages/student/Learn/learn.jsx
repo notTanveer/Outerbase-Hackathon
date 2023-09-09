@@ -4,8 +4,9 @@ import "./learn.scss";
 function Learn() {
   return (
     <div className="learn-main">
-      <div className="heading-text">What do you to learn today?</div>
+      <div className="heading-text">What do you want to learn today?</div>
       <div className="video-container">
+        {/* we need youtube integrations here */}
         <div className="video-item">I am a video</div>
         <div className="video-item">I am a video</div>
         <div className="video-item">I am a video</div>
