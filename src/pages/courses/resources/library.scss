@@ -1,0 +1,118 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #333;
+$heading-font-size: 24px;
+$sub-heading-font-size: 16px;
+$button-background-color: rgba(0, 0, 0, 0.1);
+$button-text-color: #000000;
+
+// Main container
+.main-container {
+  text-align: center;
+  padding: 20px;
+
+  // Search box
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 200px;
+    }
+
+    .search-icon {
+      //   background-image: url("search-icon.png"); // Replace with your actual icon
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+  // Heading
+  .heading {
+    font-size: 40px;
+    color: $secondary-color;
+    margin-top: 20px;
+  }
+
+  // Sub-heading
+  .sub-heading {
+    font-size: $sub-heading-font-size;
+    color: $secondary-color;
+    margin-top: 10px;
+  }
+  .catalog-holder {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    // max-width: 1200px;
+    justify-content: space-evenly;
+  }
+  // Container for Web Technologies
+  .container {
+    // margin-top: 20px;
+    padding: 6px;
+    padding-bottom: 24px;
+    background-color: #0000000c;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    position: relative;
+
+    // Heading
+    .heading {
+      font-size: 20px;
+      color: $primary-color;
+      margin-bottom: 8px;
+    }
+
+    // Sub-heading
+    .sub-heading {
+      font-size: 16px;
+      color: $secondary-color;
+      margin-bottom: 5px;
+      text-overflow: ellipsis;
+      //   height: 10px;
+    }
+
+    // Button container
+    .button-containers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .button {
+        background-color: $button-background-color;
+        color: $button-text-color;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($button-background-color, 10%);
+        }
+      }
+    }
+    .read-more-cta {
+      font-size: 16px;
+      color: $primary-color;
+      cursor: pointer;
+      transition: color 0.3s;
+      position: absolute;
+      bottom: 2px;
+      right: 20px;
+
+      &:hover {
+        color: darken($primary-color, 20%);
+      }
+    }
+  }
+}

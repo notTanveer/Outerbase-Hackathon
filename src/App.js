@@ -5,6 +5,7 @@ import StudentDashboard from "./pages/student/dashboard";
 import StartUpPage from "./pages/StartUpPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./pages/components/navbar";
+import Library from "./pages/courses/resources/library";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartUpPage />} />
           <Route path="/student" element={<StudentDashboard />} />
+          <Route path="/library" element={<Library />} />
         </Routes>
       </BrowserRouter>
     </div>

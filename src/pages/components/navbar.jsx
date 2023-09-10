@@ -12,7 +12,7 @@ function Navbar() {
           <Link to="/student">Student</Link>
           <Link to="/courses">Courses</Link>
           <Link to="/community">Community</Link>
-          <Link to="/community">Library</Link>
+          <Link to="/library">Library</Link>
         </div>
         <div className="login">
           <div className="login-button">LOGIN</div>
