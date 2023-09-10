@@ -1,37 +1,62 @@
 @import "../../css-config/mixins.scss";
-/* Styling for the navbar */
+
+$primary: #3f51b5;
+
+// Define styles for the content container
+.content {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+// Define styles for the navbar
 .navbar {
-  background-color: #333;
-  color: white;
   display: flex;
-  padding: 10px 20px;
-  gap: 40px;
+  justify-content: space-between;
   align-items: center;
+  background-color: #333;
+  padding: 10px 100px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling for the logo */
+// Define styles for the logo
 .logo {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
-  text-decoration: none;
-  margin-right: 100px;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
-/* Styling for the navigation links */
-.nav-link {
-  list-style: none;
-  color: wheat;
-  text-decoration: none;
+// Define styles for the links in the navbar
+.all-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    &:hover {
+      color: #00ffc3;
+    }
+  }
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #007bff;
+// Define styles for the login section
+.login {
+  display: flex;
+  gap: 10px;
+  .login-button,
+  .sign-up {
+    background-color: $primary;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background-color: #1f8bff;
+    }
   }
 }

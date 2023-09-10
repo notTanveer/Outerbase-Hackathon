@@ -1,8 +1,10 @@
 // Sahil
-import React from 'react';
-import './StartUpPage.scss';
+import React from "react";
+import "./StartUpPage.scss";
+import { useNavigate } from "react-router-dom";
 
 function StartUpPage() {
+  const navigate = useNavigate();
   return (
     <div className="dashboard">
       <header>
@@ -13,9 +15,15 @@ function StartUpPage() {
         <section className="quick-links">
           <nav className="navbar">
             <ul className="nav-list">
-              <li className="nav-item"><a href="/courses">Courses</a></li>
-              <li className="nav-item"><a href="/grades">Grades</a></li>
-              <li className="nav-item"><a href="/calendar">Academic Calendar</a></li>
+              <li className="nav-item" onClick={() => navigate("/courses")}>
+                <a>Courses</a>
+              </li>
+              <li className="nav-item" onClick={() => navigate("/grades")}>
+                <a>Grades</a>
+              </li>
+              <li className="nav-item" onClick={() => navigate("/calendar")}>
+                <a>Academic Calendar</a>
+              </li>
             </ul>
           </nav>
         </section>
@@ -32,9 +40,15 @@ function StartUpPage() {
           <h2>Campus Resources</h2>
           <nav className="navbar">
             <ul className="nav-list">
-              <li className="nav-item"><a href="/writing-center">Writing Center</a></li>
-              <li className="nav-item"><a href="/tutoring">Tutoring</a></li>
-              <li className="nav-item"><a href="/counseling">Counseling</a></li>
+              <li className="nav-item">
+                <a href="/writing-center">Writing Center</a>
+              </li>
+              <li className="nav-item">
+                <a href="/tutoring">Tutoring</a>
+              </li>
+              <li className="nav-item">
+                <a href="/counseling">Counseling</a>
+              </li>
             </ul>
           </nav>
         </section>

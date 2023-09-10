@@ -3,8 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  // padding: 20px;
   justify-content: center;
   height: 83vh;
+  background-color: #f3f3f3;
+  position: relative;
 
   /* Styling for the heading text */
   .heading-text {
@@ -22,7 +25,7 @@
     .video-item {
       width: 400px;
       height: 300px;
-      background-color: #f2f2f2;
+      background-color: #d6d6d6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,5 +62,13 @@
       border-radius: 4px;
       margin-left: 10px;
     }
+  }
+  .visit-library {
+    position: absolute;
+    background-color: #b3b3b3;
+    padding: 10px;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { IoMdSend } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
 import "./learn.scss";
 function Learn() {
   return (
@@ -16,6 +17,9 @@ function Learn() {
         <div className="send-button">
           <IoMdSend />
         </div>
+      </div>
+      <div className="visit-library">
+        Visit Library <FaArrowRight />
       </div>
     </div>
   );
