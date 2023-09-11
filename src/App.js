@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./pages/components/navbar";
 import Library from "./pages/courses/resources/library";
 import Chat from "./pages/chat/interface";
-import App from "./pages/chat/server";
+import ChatApp from "./pages/chat/server";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<StartUpPage />} />
           <Route path="/student" element={<StudentDashboard />} />
           <Route path="/library" element={<Library />} />
-          <Route path="/chat" element={<Chat/>} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>
     </div>
