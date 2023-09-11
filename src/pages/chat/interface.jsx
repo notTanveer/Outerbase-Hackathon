@@ -14,7 +14,7 @@ function Chat() {
             </aside>
             <section class="chat-area">
                 <header class="chat-header">
-                <h2>100x Chat</h2>
+                <h2>ScholarSphere</h2>
                 </header>
                 <div class="messages">
                 <div class="message received">Hello there!</div>
