@@ -68,16 +68,20 @@ body {
 }
 
 .message-input {
-  display: flex;
   padding: 1rem;
   border-top: 1px solid #ddd;
   background-color: #ededed;
+  display: flex;
+  position: sticky; 
+  bottom: 5px;
+
   input {
     flex: 1;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+  
   button {
     margin-left: 1rem;
     padding: 0.5rem 1rem;

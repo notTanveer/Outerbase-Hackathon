@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./pages/components/navbar";
 import Library from "./pages/courses/resources/library";
 import Chat from "./pages/chat/interface";
-import App from "./pages/chat/server";
+import Server from "./pages/chat/server";
 
 function App() {
   return (

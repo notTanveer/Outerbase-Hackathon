@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 
 const socket = io();
 
-function App() {
+function Server() {
   const [username, setUsername] = useState('');
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [messageInput, setMessageInput] = useState('');
@@ -73,4 +73,4 @@ function App() {
   );
 }
 
-export default App;
+export default Server;

@@ -1,6 +1,7 @@
 import React from "react";
 import "./chat.scss";
 
+
 function Chat() {
     return (
         <body>
