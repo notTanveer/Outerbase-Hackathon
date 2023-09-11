@@ -2,15 +2,16 @@
 import React from "react";
 import "./StartUpPage.scss";
 import { useNavigate } from "react-router-dom";
+import HomeBanner from "./banner/Banner";
 
 function StartUpPage() {
   const navigate = useNavigate();
   return (
     <div className="dashboard">
+      <HomeBanner />
       <header>
         <h1 className="logo">ScholarSphere</h1>
       </header>
-
       <main>
         <section className="quick-links">
           <nav className="navbar">
