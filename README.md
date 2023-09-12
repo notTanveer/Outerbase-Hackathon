@@ -34,6 +34,7 @@ Follow these steps to get started with the Ed-Tech Platform:
 2. Install Dependecies
    ```shell
    npm install
+   npm install express socket.io
 
 3. Configure the platform settings, such as database connection, API keys, and environment variables. You can find the configuration files in the /config directory.
 
