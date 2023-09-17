@@ -1,8 +1,13 @@
 @import "../../css-config/mixins.scss";
 .banner {
   padding: 40px 0;
-  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
-  height: calc(100vh - 80px);
+  // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(
+    303deg,
+    rgba(182, 51, 118, 1) 5%,
+    rgba(29, 15, 74, 1) 57%
+  );
+  height: 86vh;
   .content {
     height: calc(100% - 150px);
     display: flex;

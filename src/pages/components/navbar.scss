@@ -1,7 +1,7 @@
 @import "../../css-config/mixins.scss";
 
-$primary: #3f51b5;
-
+$primary: #6979d3;
+$cont: #1d0f4a;
 // Define styles for the content container
 .content {
   position: sticky;
@@ -14,9 +14,9 @@ $primary: #3f51b5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
   padding: 10px 100px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  background: rgb(182, 51, 118);
 }
 
 // Define styles for the logo
@@ -35,10 +35,38 @@ $primary: #3f51b5;
   gap: 30px;
   a {
     text-decoration: none;
+    transition: 0.5s;
     font-size: 18px;
     color: #ffffff;
+    position: relative;
     &:hover {
-      color: #00ffc3;
+      color: #7bedff;
+      &:after {
+        width: 100%;
+      }
+      &:before {
+        width: 100%;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      background-color: #f3940e;
+      bottom: 0;
+      right: 0;
+      height: 2px;
+      transition: 0.3s all ease-in-out;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 0;
+      background-color: #f3940e;
+      top: 0;
+      left: 0;
+      height: 2px;
+      transition: 0.3s all ease-in-out;
     }
   }
 }
@@ -49,15 +77,15 @@ $primary: #3f51b5;
   gap: 10px;
   .login-button,
   .sign-up {
-    background-color: $primary;
+    background-color: #ffad39;
     color: #fff;
     user-select: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: 0.5s ease;
     &:hover {
-      background-color: #1f8bff;
+      background-color: #ffd07e;
     }
   }
 }
