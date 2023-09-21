@@ -2,7 +2,9 @@ import React from "react";
 import { IoMdSend } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 import "./learn.scss";
+import { useNavigate } from "react-router-dom";
 function Learn() {
+  const navigate = useNavigate();
   return (
     <div className="learn-main">
       <div className="heading-text">What do you want to learn today?</div>
@@ -18,7 +20,7 @@ function Learn() {
           <IoMdSend />
         </div>
       </div>
-      <div className="visit-library">
+      <div className="visit-library" onClick={() => navigate("/library")}>
         Visit Library <FaArrowRight />
       </div>
     </div>

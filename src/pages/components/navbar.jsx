@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="content">
       <div className="navbar">
@@ -17,8 +18,12 @@ function Navbar() {
           <Link to="/chat">Chat</Link>
         </div>
         <div className="login">
-          <div className="login-button">LOGIN</div>
-          <div className="sign-up">SIGN UP</div>
+          <div className="login-button" onClick={() => navigate("/login")}>
+            LOGIN
+          </div>
+          <div className="sign-up" onClick={() => navigate("/signup")}>
+            SIGN UP
+          </div>
         </div>
       </div>
     </div>
