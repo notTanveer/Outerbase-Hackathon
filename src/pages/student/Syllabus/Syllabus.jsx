@@ -7,7 +7,9 @@ function Syllabus() {
     <div className="syllabus-container">
       <div className="subject-list">
         {subjects.map((item) => (
-          <div className="subject-item">{item}</div>
+          <div className="subject-item" key={item.id}>
+            {item}
+          </div>
         ))}
       </div>
       <div className="syl-item-container">
