@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaLock } from "react-icons/fa";
-import "./register.scss";
-import RegisterImage from "../assets/img-01.png";
+import { CgProfile } from "react-icons/cg";
+import { BiAt } from "react-icons/bi";
+import { BsFillCalendarDateFill } from "react-icons/bs";
+import "../register.scss";
+import RegisterImage from "../../assets/img-01.png";
 import { useNavigate } from "react-router-dom";
-function Registration() {
+function UserRegistration() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -33,64 +35,73 @@ function Registration() {
             <img src={RegisterImage} alt="ni" />
           </div>
           <form action="" className="form">
-            <span className="heading">Register User</span>
+            <span className="heading">
+              Provide your information with Date of Birth
+            </span>
             <div
               className="wrap-input100 space"
-              data-validate="Valid email is required: ex@abc.xyz"
+              data-validate="Valid First name is required"
             >
               <input
                 type="text"
-                name="email"
-                placeholder="Email"
+                name="firstname"
+                placeholder="First Name"
                 className="input100"
               />
               <span className="focus-input100"></span>
               <span className="symbol-input100">
-                <FaEnvelope />
+                <CgProfile />
               </span>
             </div>
             <div
               className="wrap-input100 space"
-              data-validate="Password is required"
+              data-validate="Valid Last name is required"
             >
               <input
                 type="text"
-                name="password"
-                placeholder="Password"
+                name="lastname"
+                placeholder="Last Name"
                 className="input100"
               />
               <span className="focus-input100"></span>
               <span className="symbol-input100">
-                <FaLock />
+                <CgProfile />
               </span>
             </div>
             <div
               className="wrap-input100 space"
-              data-validate="Confirm Password is not valid"
+              data-validate="Username is not valid"
             >
               <input
-                type="password"
-                name="confirmpassword"
-                placeholder="Confirm Password"
+                type="text"
+                name="username"
+                placeholder="Username"
                 className="input100"
               />
               <span className="focus-input100"></span>
               <span className="symbol-input100">
-                <FaLock />
+                <BiAt />
+              </span>
+            </div>
+            <div
+              className="wrap-input100 space"
+              data-validate="Username is not valid"
+            >
+              <input
+                type="date"
+                name="username"
+                placeholder="Username"
+                className="input100"
+              />
+              <span className="focus-input100"></span>
+              <span className="symbol-input100">
+                <BsFillCalendarDateFill />
               </span>
             </div>
             <div className="login-con">
-              <button>SIGN UP</button>
+              <button>REGISTER</button>
             </div>
             {/* <div className="forgot">Forgot password</div> */}
-            <div
-              className="create-acc"
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              Already a user? Login &#8594;
-            </div>
           </form>
         </div>
       </div>
@@ -98,4 +109,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default UserRegistration;

@@ -55,7 +55,7 @@ function LoginPage() {
               data-validate="Password is required"
             >
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 className="input100"

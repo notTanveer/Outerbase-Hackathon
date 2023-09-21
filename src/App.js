@@ -9,6 +9,7 @@ import Chat from "./pages/chat/interface";
 import ChatApp from "./pages/chat/server";
 import Registration from "./pages/Registration";
 import LoginPage from "./pages/login";
+import UserRegistration from "./pages/UserRegistration/UserRegistration";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/signup" element={<Registration />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<UserRegistration />} />
         </Routes>
       </BrowserRouter>
     </div>
