@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import RegisterImage from "../assets/img-01.png";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { supabase } from "./UserRegistration/client";
+import checkifUserExists from "../utils/utility";
+import makeApiCall from "../utils/apiCall";
 
 function LoginPage({ setToken, register }) {
   const navigate = useNavigate();
@@ -29,11 +31,25 @@ function LoginPage({ setToken, register }) {
       if (error) throw error;
       localStorage.setItem("token", JSON.stringify(data));
       setToken(data);
-      if (register) {
-        navigate("/student");
-      } else {
-        navigate("/register");
-      }
+      //Checking if user exists in database
+      makeApiCall("POST", "geta/student", { id: formData.email }).then(
+        (data) => {
+          console.log(data);
+          if (data?.success) {
+            if (data.response.count > 0) {
+              localStorage.setItem(
+                "register",
+                JSON.stringify({ username: data.response.items[0].username })
+              );
+              register({ username: data.response.items[0].username });
+              navigate("/student");
+            } else {
+              navigate("/register");
+            }
+          }
+        }
+      );
+      //checking ended
     } catch (error) {
       alert(error);
     }

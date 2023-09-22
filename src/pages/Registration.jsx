@@ -22,8 +22,8 @@ function Registration() {
     });
   };
 
-  const handleSubmit = async () => {
-    // e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const { data, error } = await supabase.auth.signUp({
         email: formData.email,
@@ -44,7 +44,7 @@ function Registration() {
           <div className="login-pic js-tilt" data-tilt>
             <img src={RegisterImage} alt="ni" />
           </div>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <span className="heading">Register User</span>
             {sumbit ? (
               <>
@@ -103,7 +103,7 @@ function Registration() {
                   </span>
                 </div>
                 <div className="login-con">
-                  <button onClick={handleSubmit}>SIGN UP</button>
+                  <button>SIGN UP</button>
                 </div>
                 {/* <div className="forgot">Forgot password</div> */}
                 <div

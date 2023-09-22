@@ -15,20 +15,32 @@ const CourseView = () => {
       }
     });
   }, []);
+  const handleEnroll = () => {
+    try {
+      makeApiCall("PUT", "enrolluser", {
+        id,
+        stid: JSON.parse(localStorage.getItem("token")).user.email,
+      }).then((data) => {
+        console.log(data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   if (!course) return <div>Loadings</div>;
   return (
     <div className="main-screen">
       <div className="single-main-container">
         <div className="single-heading">{course.course_name}</div>
         <div className="single-image">
-          <img src={course.imaglink} alt="WHy" />
+          <img src={course.imaglink} alt="Why" />
         </div>
         <div className="single-desc">{course.description}</div>
         <div className="enroll-cta">
           <div className="price">
             {course.price === 0 ? "Free" : course.price}
           </div>
-          <button>Enroll</button>
+          <button onClick={handleEnroll}>Enroll</button>
         </div>
         <div className="instructor-container">
           <div className="instructor-text">Instructor:-</div>

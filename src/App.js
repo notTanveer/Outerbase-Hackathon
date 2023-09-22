@@ -36,14 +36,19 @@ function App() {
           <Route path="/" element={<StartUpPage />} />
           {register && <Route path="/student" element={<StudentDashboard />} />}
           {register && <Route path="/chat" element={<Chat />} />}
-          {token && <Route path="/register" element={<UserRegistration />} />}
+          {token && (
+            <Route
+              path="/register"
+              element={<UserRegistration setRegister={setRegister} />}
+            />
+          )}
           <Route path="/library" element={<Library />} />
           <Route path="/signup" element={<Registration />} />
           <Route path="/course" element={<CourseEnroll />} />
           <Route path="/course/:id" element={<CourseView />} />
           <Route
             path="/login"
-            element={<LoginPage setToken={setToken} register={register} />}
+            element={<LoginPage setToken={setToken} register={setRegister} />}
           />
         </Routes>
       </BrowserRouter>

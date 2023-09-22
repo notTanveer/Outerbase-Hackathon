@@ -10,10 +10,8 @@ import makeApiCall from "../../utils/apiCall";
 function StudentDashboard() {
   const [StudentData, setStudentData] = useState();
   const myEmail = JSON.parse(localStorage.getItem("token")).user.email;
-  console.log(myEmail);
   useEffect(() => {
     makeApiCall("POST", "geta/student", { id: myEmail }).then((data) => {
-      console.log(data);
       setStudentData(data);
     });
   }, []);

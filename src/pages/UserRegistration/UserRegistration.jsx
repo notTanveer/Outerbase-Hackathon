@@ -6,7 +6,7 @@ import "../register.scss";
 import RegisterImage from "../../assets/img-01.png";
 import { useNavigate } from "react-router-dom";
 import makeApiCall from "../../utils/apiCall";
-function UserRegistration() {
+function UserRegistration({ setRegister }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -34,12 +34,12 @@ function UserRegistration() {
         email: email.user.email,
       }).then((dats) => {
         localStorage.setItem("register", JSON.stringify(formData));
-        navigate("/student");
+        setRegister(formData);
+        navigate("/course");
       });
     } catch (error) {
       console.log(error);
     }
-    // Handle form submission here (e.g., send data to a server or store it locally).
   };
 
   return (
