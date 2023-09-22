@@ -90,3 +90,17 @@ $cont: #1d0f4a;
     }
   }
 }
+.icon-container {
+  display: flex;
+  font-size: 35px;
+  color: white;
+  font-weight: 800;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+  div {
+    font-size: 18px;
+    font-family: fantasy serif;
+    font-weight: 500;
+  }
+}

@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {register && <Navbar />}
+        {register && <Navbar token={token} />}
         <Routes>
           <Route path="/" element={<StartUpPage />} />
           {register && <Route path="/student" element={<StudentDashboard />} />}

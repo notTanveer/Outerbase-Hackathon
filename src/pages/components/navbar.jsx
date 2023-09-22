@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
 import "./navbar.scss";
 
-function Navbar() {
+function Navbar({ token }) {
   const navigate = useNavigate();
   return (
     <div className="content">
@@ -17,14 +18,23 @@ function Navbar() {
           <Link to="/library">Library</Link>
           <Link to="/chat">Chat</Link>
         </div>
-        <div className="login">
-          <div className="login-button" onClick={() => navigate("/login")}>
-            LOGIN
+        {!token ? (
+          <div className="login">
+            <div className="login-button" onClick={() => navigate("/login")}>
+              LOGIN
+            </div>
+            <div className="sign-up" onClick={() => navigate("/signup")}>
+              SIGN UP
+            </div>
           </div>
-          <div className="sign-up" onClick={() => navigate("/signup")}>
-            SIGN UP
+        ) : (
+          <div className="icon-container">
+            <CgProfile />
+            <div className="username">
+              {JSON.parse(localStorage.getItem("register")).username}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ function UserRegistration() {
         dob: formData.date,
         email: email.user.email,
       }).then((dats) => {
-        localStorage.setItem("register", formData);
+        localStorage.setItem("register", JSON.stringify(formData));
         navigate("/student");
       });
     } catch (error) {
