@@ -3,7 +3,7 @@ const makeApiCall = async (method, url, body) => {
     const res = await fetch(
       `https://constitutional-yellow.cmd.outerbase.io/${url}`,
       {
-        method: method,
+        method,
         headers: {
           "content-type": "application/json",
         },
