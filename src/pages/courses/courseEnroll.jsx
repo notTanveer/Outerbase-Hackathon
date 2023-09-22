@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./course.scss";
 import makeApiCall from "../../utils/apiCall";
+import { useNavigate } from "react-router-dom";
 const CourseEnroll = () => {
   const [courses, setCourses] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
     makeApiCall("GET", "getall/course").then((data) => {
-      if (data.success) {
+      if (data?.success) {
         setCourses(data.response.items);
         console.log(data);
       }
@@ -21,7 +23,13 @@ const CourseEnroll = () => {
         </div>
         <div className="course-list-container">
           {courses.map((item) => (
-            <div className="course-list-item" key={item.id}>
+            <div
+              className="course-list-item"
+              key={item.course_id}
+              onClick={() => {
+                navigate(`/course/${item.course_id}`);
+              }}
+            >
               <div className="texts">
                 <div className="heading">{item.course_name}</div>
                 <div className="desc">{item.description}</div>

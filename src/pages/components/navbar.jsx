@@ -17,13 +17,13 @@ function Navbar({ token, register }) {
           <Link to="/">ScholarSphere</Link>
         </div>
         <div className="all-links">
-          <Link to="/student">Student</Link>
-          <Link to="/courses">Courses</Link>
+          {register && <Link to="/student">Student</Link>}
+          <Link to="/course">Courses</Link>
           <Link to="/community">Community</Link>
           <Link to="/library">Library</Link>
           <Link to="/chat">Chat</Link>
         </div>
-        {!token ? (
+        {!register ? (
           <div className="login">
             <div className="login-button" onClick={() => navigate("/login")}>
               LOGIN

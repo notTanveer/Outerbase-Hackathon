@@ -11,6 +11,7 @@ import Registration from "./pages/Registration";
 import LoginPage from "./pages/login";
 import UserRegistration from "./pages/UserRegistration/UserRegistration";
 import CourseEnroll from "./pages/courses/courseEnroll";
+import CourseView from "./pages/courses/courseView";
 
 function App() {
   const [token, setToken] = useState();
@@ -30,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {register && <Navbar token={token} register={register} />}
+        <Navbar token={token} register={register} />
         <Routes>
           <Route path="/" element={<StartUpPage />} />
           {register && <Route path="/student" element={<StudentDashboard />} />}
@@ -39,6 +40,7 @@ function App() {
           <Route path="/library" element={<Library />} />
           <Route path="/signup" element={<Registration />} />
           <Route path="/course" element={<CourseEnroll />} />
+          <Route path="/course/:id" element={<CourseView />} />
           <Route
             path="/login"
             element={<LoginPage setToken={setToken} register={register} />}
