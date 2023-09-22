@@ -1,0 +1,89 @@
+.screen {
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(
+    303deg,
+    rgba(182, 51, 118, 1) 5%,
+    rgba(29, 15, 74, 1) 57%
+  );
+}
+.course-enroll-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px; /* Set your desired maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 10px;
+
+  .main-container {
+    .heading {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: white;
+    }
+  }
+
+  .course-list-container {
+    max-height: 700px; /* Set the maximum height for vertical scrolling */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    margin-top: 10px;
+
+    .course-list-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #ccc;
+
+      .texts {
+        .heading {
+          font-size: 22px;
+          margin-bottom: 5px;
+        }
+
+        .desc {
+          font-size: 16px;
+          color: #555;
+        }
+        .instructor {
+          margin-top: 10px;
+          .name {
+            font-size: 18px;
+            text-decoration: underline;
+            color: #007bff;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .buttons {
+        margin-left: 50px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .enroll-cta {
+          background-color: #007bff;
+          color: #fff;
+          padding: 1em 3rem;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+
+        .price {
+          font-size: 18px;
+          color: #007bff;
+        }
+      }
+    }
+  }
+}

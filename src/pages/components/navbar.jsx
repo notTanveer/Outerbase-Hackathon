@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import "./navbar.scss";
 
-function Navbar({ token }) {
+function Navbar({ token, register }) {
   const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (register) {
+  //     navigate("/student");
+  //   }
+  // }, []);
   return (
     <div className="content">
       <div className="navbar">

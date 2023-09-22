@@ -10,6 +10,7 @@ import ChatApp from "./pages/chat/server";
 import Registration from "./pages/Registration";
 import LoginPage from "./pages/login";
 import UserRegistration from "./pages/UserRegistration/UserRegistration";
+import CourseEnroll from "./pages/courses/courseEnroll";
 
 function App() {
   const [token, setToken] = useState();
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {register && <Navbar token={token} />}
+        {register && <Navbar token={token} register={register} />}
         <Routes>
           <Route path="/" element={<StartUpPage />} />
           {register && <Route path="/student" element={<StudentDashboard />} />}
@@ -37,6 +38,7 @@ function App() {
           {token && <Route path="/register" element={<UserRegistration />} />}
           <Route path="/library" element={<Library />} />
           <Route path="/signup" element={<Registration />} />
+          <Route path="/course" element={<CourseEnroll />} />
           <Route
             path="/login"
             element={<LoginPage setToken={setToken} register={register} />}
