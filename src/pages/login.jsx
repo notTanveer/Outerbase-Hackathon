@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RegisterImage from "../assets/img-01.png";
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import { supabase } from "./UserRegistration/client";
 
-function LoginPage() {
+function LoginPage({ setToken, register }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -19,11 +19,24 @@ function LoginPage() {
       [name]: value,
     });
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to a server or store it locally).
-    console.log(formData);
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email.trim(),
+        password: formData.password,
+      });
+      if (error) throw error;
+      localStorage.setItem("token", JSON.stringify(data));
+      setToken(data);
+      if (register) {
+        navigate("/student");
+      } else {
+        navigate("/register");
+      }
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -33,7 +46,7 @@ function LoginPage() {
           <div className="login-pic js-tilt" data-tilt>
             <img src={RegisterImage} alt="ni" />
           </div>
-          <form action="" className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <span className="heading">Login User</span>
             <div
               className="wrap-input100 space"
@@ -44,6 +57,9 @@ function LoginPage() {
                 name="email"
                 placeholder="Email"
                 className="input100"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
               <span className="focus-input100"></span>
               <span className="symbol-input100">
@@ -59,6 +75,9 @@ function LoginPage() {
                 name="password"
                 placeholder="Password"
                 className="input100"
+                value={formData.password}
+                onChange={handleChange}
+                required
               />
               <span className="focus-input100"></span>
               <span className="symbol-input100">

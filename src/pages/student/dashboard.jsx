@@ -10,10 +10,12 @@ import makeApiCall from "../../utils/apiCall";
 function StudentDashboard() {
   const [StudentData, setStudentData] = useState();
   useEffect(() => {
-    makeApiCall("POST", "get/student").then((data) => {
+    makeApiCall("POST", "geta/student", { id: "1" }).then((data) => {
+      console.log(data);
       setStudentData(data);
     });
-  });
+  }, []);
+  if (!StudentData) return <div>Loading</div>;
   return (
     <div className="student-dashboard">
       <div className="main-page">

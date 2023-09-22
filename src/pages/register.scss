@@ -155,7 +155,16 @@
     }
   }
 }
-
+.text-container {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 18px;
+  color: #2c2c2c;
+  font-weight: 600;
+  .email {
+    font-size: 20px;
+  }
+}
 @media (max-width: 768px) {
   .wrap-login100 {
     padding: 100px 80px 33px 80px;
