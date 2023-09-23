@@ -40,7 +40,7 @@ function StudentDashboard() {
             {/* THis includes course details  */}
             {StudentData?.response?.items[0].course_name}
           </div>
-          <Learn />
+          <Learn viddata={courseData?.response.items[0].videolist} />
           <Syllabus syl={courseData?.response.items[0].syllabus} />
         </div>
         <div className="aside">
