@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdSend } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 import "./learn1.scss";
@@ -6,12 +6,25 @@ import { useNavigate } from "react-router-dom";
 function Learn({ viddata }) {
   const navigate = useNavigate();
   const videoData = JSON.parse(viddata).videolist;
+  const [finalData, setFinalData] = useState(videoData);
+
   return (
     <div className="learn-main">
       <div className="learn-header">
         <div className="heading-text">What do you want to learn today?</div>
         <div className="search-box">
-          <input type="text" placeholder="React Js Tutorial" />
+          <input
+            type="text"
+            name="search-form"
+            placeholder="React Js Tutorial"
+            onChange={(e) => {
+              setFinalData(
+                videoData.filter((item) =>
+                  item.title.toLowerCase().includes(e.target.value)
+                )
+              );
+            }}
+          />
           <div className="send-button">
             <IoMdSend />
           </div>
@@ -21,14 +34,13 @@ function Learn({ viddata }) {
         </div>
       </div>
       <div className="video-container">
-        {videoData.map((item) => (
+        {finalData.map((item) => (
           <div className="video-item" key={item.id}>
             <div className="thumbnail">
               <iframe
                 src={item.link}
-                frameborder="0"
                 // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
             <div className="details">

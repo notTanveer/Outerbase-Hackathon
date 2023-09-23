@@ -14,10 +14,10 @@ function StudentDashboard() {
   useEffect(() => {
     makeApiCall("POST", "geta/student", { id: myEmail }).then((data) => {
       setStudentData(data);
-      // console.log(data.response.items[0].batch_enrolled);
+      console.log(data.response.items[0].batch_enrolled);
 
       makeApiCall("POST", "detailsincourse", {
-        id: "1",
+        id: data.response.items[0].batch_enrolled.toString(),
       }).then((datas) => {
         console.log(datas);
         // const pppp = JSON.parse(datas.response.items[0].upcoming);

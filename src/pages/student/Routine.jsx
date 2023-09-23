@@ -3,7 +3,7 @@ import React from "react";
 import RoutineItem from "./routineItem";
 
 function Routine({ routine }) {
-  const courseData = JSON.parse(routine).devops;
+  const courseData = JSON.parse(routine).upcoming;
   return (
     <div className="routine-main">
       <div className="heading">Upcoming Classes</div>
