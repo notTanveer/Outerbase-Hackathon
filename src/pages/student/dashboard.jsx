@@ -41,7 +41,7 @@ function StudentDashboard() {
             {StudentData?.response?.items[0].course_name}
           </div>
           <Learn />
-          <Syllabus />
+          <Syllabus syl={courseData?.response.items[0].syllabus} />
         </div>
         <div className="aside">
           <Routine routine={courseData?.response.items[0].upcoming} />

@@ -124,12 +124,22 @@
     }
     .main-mid {
       width: 100%;
+      .main-syl-screen {
+        background-color: #868282;
+        padding-top: 10px;
+        .heading {
+          font-size: 28px;
+          text-align: center;
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+      }
       .syllabus-container {
         display: flex;
         flex-direction: row;
         gap: 20px;
-        background-color: #868282;
         padding: 20px;
+        padding-top: 10px;
       }
 
       .subject-list {
@@ -174,7 +184,7 @@
         margin-bottom: 20px;
         transition: box-shadow 0.3s ease-out;
         &:hover {
-          box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4);
         }
         /* Styling for the title */
         .title {

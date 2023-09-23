@@ -1,10 +1,10 @@
 import React from "react";
 
-function SyllabusItem() {
+function SyllabusItem({ itemData }) {
   return (
     <div className="syllabus-item">
-      <div className="title">Hello World</div>
-      <div className="desc">HEllo workd asdasdhkajfhkahfladhkadh</div>
+      <div className="title">{itemData.name}</div>
+      <div className="desc">{itemData.description}</div>
     </div>
   );
 }
