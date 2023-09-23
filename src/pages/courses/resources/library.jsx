@@ -1,7 +1,6 @@
 import React from "react";
 import "./library.scss";
 import LibraryCatalog from "../catalog";
-import VideoLibrary from "./videoLibrary";
 
 function Library() {
   return (
@@ -14,7 +13,6 @@ function Library() {
       <div className="sub-heading">
         A full packed Resource to meet all your needs in one place
       </div>
-      <VideoLibrary />
       <div className="catalog-holder">
         <LibraryCatalog />
         <LibraryCatalog />

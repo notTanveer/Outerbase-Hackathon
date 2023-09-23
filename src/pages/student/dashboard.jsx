@@ -9,14 +9,24 @@ import makeApiCall from "../../utils/apiCall";
 
 function StudentDashboard() {
   const [StudentData, setStudentData] = useState();
+  const [courseData, setCourseData] = useState();
   const myEmail = JSON.parse(localStorage.getItem("token")).user.email;
   useEffect(() => {
     makeApiCall("POST", "geta/student", { id: myEmail }).then((data) => {
       setStudentData(data);
-      console.log(data);
+      // console.log(data.response.items[0].batch_enrolled);
+
+      makeApiCall("POST", "detailsincourse", {
+        id: "1",
+      }).then((datas) => {
+        console.log(datas);
+        // const pppp = JSON.parse(datas.response.items[0].upcoming);
+        // console.log(pppp.devops[0].name);
+        setCourseData(datas);
+      });
     });
   }, []);
-  if (!StudentData) return <div>Loading</div>;
+  if (!courseData) return <div>Loading</div>;
   return (
     <div className="student-dashboard">
       <div className="main-page">
@@ -34,8 +44,8 @@ function StudentDashboard() {
           <Syllabus />
         </div>
         <div className="aside">
-          <Routine />
-          <FeeStructure />
+          <Routine routine={courseData?.response.items[0].upcoming} />
+          {/* <FeeStructure /> */}
         </div>
       </div>
     </div>

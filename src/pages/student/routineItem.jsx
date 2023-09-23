@@ -1,11 +1,12 @@
 import React from "react";
 
-function RoutineItem() {
+function RoutineItem({ data }) {
+  if (!data) return <div>Loadiing</div>;
   return (
     <div className="main-item">
-      <div className="time">Monday - 10:00 am</div>
-      <div className="subject-name">Data Structure and Algorithm</div>
-      <div className="teacher-info"> XYZ Sir</div>
+      <div className="time">{data.time}</div>
+      <div className="subject-name">{data.name}</div>
+      <div className="teacher-info"> {data.details}</div>
     </div>
   );
 }
