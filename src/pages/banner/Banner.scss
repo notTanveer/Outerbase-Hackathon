@@ -2,11 +2,7 @@
 .banner {
   padding: 40px 0;
   // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
-  background: linear-gradient(
-    303deg,
-    rgba(182, 51, 118, 1) 5%,
-    rgba(29, 15, 74, 1) 57%
-  );
+  background: linear-gradient(303deg, #b63376 5%, #1d0f4a 57%);
   height: 94vh;
   .content {
     height: calc(100% - 150px);
@@ -18,7 +14,7 @@
     .heading {
       font-size: 80px;
       color: cyan;
-      font-family: fantasy;
+      font-family: sans-serif;
       font-weight: 700;
       margin-bottom: 20px;
       @include md {

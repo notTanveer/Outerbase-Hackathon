@@ -5,13 +5,14 @@ import LibraryCatalog from "../catalog";
 function Library() {
   return (
     <div className="main-container">
-      <div className="heading">Library</div>
-      <div className="search-box">
-        <input type="text" placeholder="search" />
-        <div className="search-icon"></div>
-      </div>
-      <div className="sub-heading">
-        A full packed Resource to meet all your needs in one place
+      <div className="main-header">
+        <div className="heading">Library</div>
+        <div className="sub-heading">
+          A full packed Resource to meet all your needs in one place
+        </div>
+        <div className="search-box">
+          <input type="search" placeholder="search" />
+        </div>
       </div>
       <div className="catalog-holder">
         <LibraryCatalog />
