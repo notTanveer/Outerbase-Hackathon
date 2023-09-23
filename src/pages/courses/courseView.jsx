@@ -21,7 +21,14 @@ const CourseView = () => {
         id,
         stid: JSON.parse(localStorage.getItem("token")).user.email,
       }).then((data) => {
-        console.log(data);
+        // console.log(data);
+        if (data.success) {
+          localStorage.setItem("course", {
+            id,
+            stid: JSON.parse(localStorage.getItem("token")).user.email,
+          });
+          window.location.href = "/student";
+        }
       });
     } catch (error) {
       console.log(error);

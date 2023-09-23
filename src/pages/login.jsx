@@ -42,7 +42,7 @@ function LoginPage({ setToken, register }) {
                 JSON.stringify({ username: data.response.items[0].username })
               );
               register({ username: data.response.items[0].username });
-              navigate("/student");
+              navigate("/course");
             } else {
               navigate("/register");
             }

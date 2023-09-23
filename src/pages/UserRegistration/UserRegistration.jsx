@@ -26,17 +26,34 @@ function UserRegistration({ setRegister }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      const email = JSON.parse(localStorage.getItem("token"));
-      makeApiCall("POST", "add/students", {
-        name: formData.firstname + " " + formData.lastname,
-        username: formData.username.trimEnd(),
-        dob: formData.date,
-        email: email.user.email,
-      }).then((dats) => {
-        localStorage.setItem("register", JSON.stringify(formData));
-        setRegister(formData);
-        navigate("/course");
+      const email = JSON.parse(localStorage.getItem("token")).user.email;
+      // console.log(email);
+      //Checking if user already exists
+      makeApiCall("POST", "geta/student", { id: email }).then((data) => {
+        console.log(data);
+        if (data?.success) {
+          if (data.response.count > 0) {
+            alert("User already registered");
+            if (data.response.items[0].batch_enrolled) {
+              window.location.href = "/student";
+            } else {
+              navigate("/course");
+            }
+          } else {
+            makeApiCall("POST", "add/students", {
+              name: formData.firstname + " " + formData.lastname,
+              username: formData.username.trimEnd(),
+              dob: formData.date,
+              email: email,
+            }).then((dats) => {
+              localStorage.setItem("register", JSON.stringify(formData));
+              setRegister(formData);
+              navigate("/course");
+            });
+          }
+        }
       });
+      //Checking ended
     } catch (error) {
       console.log(error);
     }

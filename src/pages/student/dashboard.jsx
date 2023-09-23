@@ -13,6 +13,7 @@ function StudentDashboard() {
   useEffect(() => {
     makeApiCall("POST", "geta/student", { id: myEmail }).then((data) => {
       setStudentData(data);
+      console.log(data);
     });
   }, []);
   if (!StudentData) return <div>Loading</div>;

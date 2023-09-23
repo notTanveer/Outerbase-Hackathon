@@ -16,25 +16,29 @@ import CourseView from "./pages/courses/courseView";
 function App() {
   const [token, setToken] = useState();
   const [register, setRegister] = useState();
+  const [courseSelected, setCourseSelected] = useState();
   useEffect(() => {
     if (localStorage.getItem("token")) {
       const data = JSON.parse(localStorage.getItem("token"));
       setToken(data);
-    } else {
     }
     if (localStorage.getItem("register")) {
       const data = localStorage.getItem("register");
       setRegister(data);
-    } else {
+    }
+    if (localStorage.getItem("course")) {
+      setCourseSelected(localStorage.getItem("course"));
     }
   }, []);
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar token={token} register={register} />
+        <Navbar token={courseSelected} register={register} />
         <Routes>
           <Route path="/" element={<StartUpPage />} />
-          {register && <Route path="/student" element={<StudentDashboard />} />}
+          {courseSelected && (
+            <Route path="/student" element={<StudentDashboard />} />
+          )}
           {register && <Route path="/chat" element={<Chat />} />}
           {token && (
             <Route
