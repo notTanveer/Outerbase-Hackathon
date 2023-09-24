@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import RegisterImage from "../assets/img-01.png";
+import RegisterImage from "../../assets/img-01.png";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { supabase } from "./UserRegistration/client";
-import makeApiCall from "../utils/apiCall";
+import makeApiCall from "../../utils/apiCall";
 
-function LoginPage({ setToken, register }) {
+function InstructorLoginPage() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -23,32 +22,31 @@ function LoginPage({ setToken, register }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: formData.email.trim(),
-        password: formData.password,
-      });
-      if (error) throw error;
-      localStorage.setItem("token", JSON.stringify(data));
-      setToken(data);
-      //Checking if user exists in database
-      makeApiCall("POST", "geta/student", { id: formData.email }).then(
-        (data) => {
-          console.log(data);
-          if (data?.success) {
-            if (data.response.count > 0) {
-              localStorage.setItem(
-                "register",
-                JSON.stringify({ username: data.response.items[0].username })
-              );
-              register({ username: data.response.items[0].username });
-              navigate("/course");
-            } else {
-              navigate("/register");
-            }
-          }
-        }
-      );
-      //checking ended
+      //   makeApiCall("POST", "geta/instructor", { id: formData.email }).then(
+      //     (data) => {
+      //       console.log(data);
+      //       if (data?.success) {
+      //         if (data.response.count > 0) {
+      //           //Email exists now check for password
+      //           if (data.response.items[0].password === formData.password) {
+      //             //User verified Open Dashboard and save into localstorage
+      //             localStorage.setItem(
+      //               "register",
+      //               JSON.stringify({ username: data.response.items[0].username })
+      //             );
+      //           } else {
+      //             //Password is wrong try again
+      //             alert(`Wrong password please try again`);
+      //           }
+      //         } else {
+      //           //User not exists alert
+      //           alert(
+      //             `No email registered with ${formData.email} . Please contact the owner`
+      //           );
+      //         }
+      //       }
+      //     }
+      //   );
     } catch (error) {
       alert(error);
     }
@@ -62,7 +60,7 @@ function LoginPage({ setToken, register }) {
             <img src={RegisterImage} alt="ni" />
           </div>
           <form className="form" onSubmit={handleSubmit}>
-            <span className="heading">Login User</span>
+            <span className="heading">Instructor Login</span>
             <div
               className="wrap-input100 space"
               data-validate="Valid email is required: ex@abc.xyz"
@@ -103,14 +101,6 @@ function LoginPage({ setToken, register }) {
               <button>LOGIN</button>
             </div>
             <div className="forgot">Forgot password</div>
-            <div
-              className="create-acc"
-              onClick={() => {
-                navigate("/signup");
-              }}
-            >
-              Create your account &#8594;
-            </div>
           </form>
         </div>
       </div>
@@ -118,4 +108,4 @@ function LoginPage({ setToken, register }) {
   );
 }
 
-export default LoginPage;
+export default InstructorLoginPage;

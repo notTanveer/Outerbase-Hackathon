@@ -1,24 +1,98 @@
 @import "../../css-config/mixins.scss";
-.banner {
+.hero-banner {
+  margin-top: 50px;
   padding: 40px 0;
-  // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
-  background: linear-gradient(303deg, #b63376 5%, #1d0f4a 57%);
-  height: 94vh;
-  .content {
-    height: calc(100% - 150px);
+  position: relative;
+  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  @include md {
+    height: 100vh;
+  }
+  .ban-content {
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
     position: relative;
-    .heading {
-      font-size: 80px;
-      color: cyan;
-      font-family: sans-serif;
-      font-weight: 700;
+    @include md {
+      flex-direction: row;
+      max-width: 1200px;
+    }
+    .banner-img {
+      position: relative;
+      z-index: 9;
+      width: 200px;
       margin-bottom: 20px;
       @include md {
-        font-size: 120px;
+        width: 300px;
+        margin-right: 60px;
+        margin-top: 50px;
+        margin-bottom: 0;
+      }
+      @include xxl {
+        width: 400px;
+        margin-right: 0px;
+        margin-top: 0px;
+      }
+    }
+    .text-content {
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include md {
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include xxl {
+        left: 0;
+      }
+      h1 {
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 20px;
+        @include md {
+          font-size: 80px;
+        }
+      }
+      p {
+        max-width: 300;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+        @include md {
+          max-width: 500px;
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 40px;
+        }
+      }
+      .ctas {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        .banner-cta {
+          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: 500;
+          width: fit-content;
+          border: 2px solid white;
+          padding: 10px 20px;
+          cursor: pointer;
+          &.v2 {
+            background-color: white;
+            color: black;
+          }
+          &:hover {
+            opacity: 0.6;
+          }
+        }
       }
     }
   }

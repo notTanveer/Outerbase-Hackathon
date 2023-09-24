@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import codePhoto from "../../assets/code-1.jpg";
 import "./courseview.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import makeApiCall from "../../utils/apiCall";

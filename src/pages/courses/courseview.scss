@@ -1,4 +1,7 @@
+@import "../../css-config/mixins.scss";
+
 .main-screen {
+  margin-top: 51px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +24,11 @@
   .single-image {
     margin: 10px 0;
     img {
-      max-width: 800px;
       height: auto;
+      max-width: 80vw;
+      @include md {
+        max-width: 800px;
+      }
     }
   }
 

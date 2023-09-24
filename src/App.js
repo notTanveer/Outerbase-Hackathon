@@ -13,6 +13,7 @@ import UserRegistration from "./pages/UserRegistration/UserRegistration";
 import CourseEnroll from "./pages/courses/courseEnroll";
 import CourseView from "./pages/courses/courseView";
 import ResourcePage from "./pages/courses/resources/resources";
+import InstructorLoginPage from "./pages/instructor/insLogin";
 
 function App() {
   const [token, setToken] = useState();
@@ -48,6 +49,7 @@ function App() {
             />
           )}
           <Route path="/library" element={<Library />} />
+          <Route path="/instructor/login" element={<InstructorLoginPage />} />
           <Route path="/library/:id" element={<ResourcePage />} />
           <Route path="/signup" element={<Registration />} />
           {register && <Route path="/course" element={<CourseEnroll />} />}

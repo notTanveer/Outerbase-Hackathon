@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { AiOutlineHeart } from "react-icons/ai";
 import "./navbar.scss";
+import NavItemMobile from "./naver";
 
 function Navbar({ register }) {
+  const [shownav, setShowNav] = useState(false);
   const navigate = useNavigate();
   // useEffect(() => {
   //   if (register) {
@@ -11,9 +14,12 @@ function Navbar({ register }) {
   //   }
   // }, []);
   return (
-    <div className="content">
-      <div className="navbar">
+    <>
+      <div className="nav-navbar">
         <div className="logo">
+          <div className="drawer-opener" onClick={() => setShowNav(!shownav)}>
+            {!shownav ? <AiOutlineHeart /> : <CgProfile />}
+          </div>
           <Link to="/">ScholarSphere</Link>
         </div>
         <div className="all-links">
@@ -41,7 +47,9 @@ function Navbar({ register }) {
           </div>
         )}
       </div>
-    </div>
+
+      {shownav && <NavItemMobile register={register} setShowNav={setShowNav} />}
+    </>
   );
 }
 
