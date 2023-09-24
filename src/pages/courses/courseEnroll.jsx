@@ -18,7 +18,7 @@ const CourseEnroll = () => {
   return (
     <div className="screen">
       <div className="course-enroll-container">
-        <div className="main-container">
+        <div className="main-container-enroll">
           <div className="heading">Enroll for a course</div>
         </div>
         <div className="course-list-container">
