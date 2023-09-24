@@ -1,8 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function LibraryCatalog({ liData }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="container">
+    <div
+      className="container"
+      onClick={() => {
+        navigate(`/library/${liData.id}`);
+      }}
+    >
       <div className="image-place">
         <img src={liData.img} alt="" />
       </div>
