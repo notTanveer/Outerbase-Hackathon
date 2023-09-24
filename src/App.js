@@ -34,13 +34,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar token={courseSelected} register={register} />
+        <Navbar register={register} />
         <Routes>
           <Route path="/" element={<StartUpPage />} />
           {courseSelected && (
             <Route path="/student" element={<StudentDashboard />} />
           )}
-          {register && <Route path="/chat" element={<Chat />} />}
+          {courseSelected && <Route path="/chat" element={<Chat />} />}
           {token && (
             <Route
               path="/register"
@@ -50,8 +50,8 @@ function App() {
           <Route path="/library" element={<Library />} />
           <Route path="/library/:id" element={<ResourcePage />} />
           <Route path="/signup" element={<Registration />} />
-          <Route path="/course" element={<CourseEnroll />} />
-          <Route path="/course/:id" element={<CourseView />} />
+          {register && <Route path="/course" element={<CourseEnroll />} />}
+          {register && <Route path="/course/:id" element={<CourseView />} />}
           <Route
             path="/login"
             element={<LoginPage setToken={setToken} register={setRegister} />}

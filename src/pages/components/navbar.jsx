@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import "./navbar.scss";
 
-function Navbar({ token, register }) {
+function Navbar({ register }) {
   const navigate = useNavigate();
   // useEffect(() => {
   //   if (register) {
@@ -17,11 +17,11 @@ function Navbar({ token, register }) {
           <Link to="/">ScholarSphere</Link>
         </div>
         <div className="all-links">
-          {token && <Link to="/student">Student</Link>}
-          <Link to="/course">Courses</Link>
+          {register && <Link to="/student">Student</Link>}
+          {register && <Link to="/course">Courses</Link>}
           <Link to="/community">Community</Link>
           <Link to="/library">Library</Link>
-          {token && <Link to="/chat">Chat</Link>}
+          {register && <Link to="/chat">Chat</Link>}
         </div>
         {!register ? (
           <div className="login">
