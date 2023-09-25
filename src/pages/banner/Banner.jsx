@@ -6,7 +6,7 @@ function HomeBanner() {
     <div className="banner">
       <div className="content">
         <div className="heading">Scholar Sphere</div>
-        <div className="type-animation">
+        {/* <div className="type-animation"> */}
           {/* <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed once, initially
@@ -21,9 +21,9 @@ function HomeBanner() {
             style={{ fontSize: "2em" }}
             repeat={Infinity}
           /> */}
-        </div>
+        {/* </div> */}
       </div>
-    </div>
+     </div>
   );
 }
 

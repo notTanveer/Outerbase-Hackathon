@@ -3,9 +3,26 @@ import React from "react";
 import "./StartUpPage.scss";
 import { useNavigate } from "react-router-dom";
 import HomeBanner from "./banner/Banner";
+import Testimonials from "./components/Testimonials";
 
 function StartUpPage() {
   const navigate = useNavigate();
+  const testimonialData = [
+    {
+      text: "I love this product! It's changed my life.",
+      name: "John Doe",
+      image: "john-doe.jpg",
+    },
+    {
+      text: "Highly recommended. Excellent quality.",
+      name: "Jane Smith",
+      image: "jane-smith.jpg",
+    },
+    {
+      text: "Outstanding service and support!",
+      name: "Bob Johnson",
+    },
+  ];
   return (
     <div className="dashboard">
       <HomeBanner />
@@ -52,6 +69,19 @@ function StartUpPage() {
               </li>
             </ul>
           </nav>
+        </section>
+        <section className="testimonials">
+          <h2>Testimonials</h2>
+          <div className="testimonials-list">
+            {testimonialData.map((testimonial, i)=>(
+              <Testimonials 
+                key={i}
+                name={testimonial.name}
+                text={testimonial.text}
+                image={testimonial.image}/>
+
+            ))}
+          </div>
         </section>
       </main>
     </div>

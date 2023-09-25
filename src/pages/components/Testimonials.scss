@@ -1,0 +1,31 @@
+@import "../../css-config/mixins.scss";
+.testimonials-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    .text {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+  
+    .name {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  
+    .avatar {
+      max-width: 50px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  }
