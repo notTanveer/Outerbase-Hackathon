@@ -6,6 +6,7 @@ import Syllabus from "./Syllabus/Syllabus";
 import FeeStructure from "./Fee_Structure";
 import Learn from "./Learn/learn";
 import makeApiCall from "../../utils/apiCall";
+import Message from "./Message";
 
 function StudentDashboard() {
   const [StudentData, setStudentData] = useState();
@@ -39,6 +40,7 @@ function StudentDashboard() {
             {/* THis includes course details  */}
             {StudentData?.response?.items[0].course_name}
           </div>
+          <Message message={courseData.response.items[0].message} />
           <Learn viddata={courseData?.response.items[0].videolist} />
           <Syllabus syl={courseData?.response.items[0].syllabus} />
         </div>

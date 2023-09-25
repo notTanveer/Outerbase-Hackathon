@@ -21,6 +21,7 @@ const makeApiCall = async (method, url, body) => {
     }
   } catch (e) {
     console.log(e);
+    alert("No internet connetion " + e);
   }
 };
 

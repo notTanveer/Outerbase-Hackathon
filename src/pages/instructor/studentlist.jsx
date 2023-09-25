@@ -5,7 +5,9 @@ import makeApiCall from "../../utils/apiCall";
 const StudentList = ({ courseEn }) => {
   const [Slis, setslist] = useState();
   useEffect(() => {
-    makeApiCall("POST", "getall/studs", { course: courseEn }).then((data) => {
+    makeApiCall("POST", "getall/studs", {
+      course: courseEn.course_id.toString(),
+    }).then((data) => {
       if (data) {
         setslist(data.response.items);
       }
@@ -17,7 +19,7 @@ const StudentList = ({ courseEn }) => {
       <div className="wrapper">
         <div className="header">
           <div className="your-students">Your students:</div>
-          <div className="course-name">Devops</div>
+          <div className="course-name">{courseEn.course_name}</div>
         </div>
         <div className="list-container">
           {Slis.map((item) => (
