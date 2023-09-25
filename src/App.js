@@ -14,12 +14,17 @@ import CourseEnroll from "./pages/courses/courseEnroll";
 import CourseView from "./pages/courses/courseView";
 import ResourcePage from "./pages/courses/resources/resources";
 import InstructorLoginPage from "./pages/instructor/insLogin";
+import InstructorDashboard from "./pages/instructor/insDashboard";
 
 function App() {
   const [token, setToken] = useState();
   const [register, setRegister] = useState();
   const [courseSelected, setCourseSelected] = useState();
+  const [instructor, setInstructor] = useState();
   useEffect(() => {
+    if (localStorage.getItem("instructor")) {
+      setInstructor(JSON.parse(localStorage.getItem("instructor")));
+    }
     if (localStorage.getItem("token")) {
       const data = JSON.parse(localStorage.getItem("token"));
       setToken(data);
@@ -35,9 +40,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar register={register} />
+        <Navbar register={register} instructor={instructor} />
         <Routes>
-          <Route path="/" element={<StartUpPage />} />
+          <Route path="/" element={<StartUpPage register={register} />} />
           {courseSelected && (
             <Route path="/student" element={<StudentDashboard />} />
           )}
@@ -49,6 +54,7 @@ function App() {
             />
           )}
           <Route path="/library" element={<Library />} />
+          <Route path="/instructor" element={<InstructorDashboard />} />
           <Route path="/instructor/login" element={<InstructorLoginPage />} />
           <Route path="/library/:id" element={<ResourcePage />} />
           <Route path="/signup" element={<Registration />} />

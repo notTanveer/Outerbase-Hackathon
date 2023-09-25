@@ -22,31 +22,34 @@ function InstructorLoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //   makeApiCall("POST", "geta/instructor", { id: formData.email }).then(
-      //     (data) => {
-      //       console.log(data);
-      //       if (data?.success) {
-      //         if (data.response.count > 0) {
-      //           //Email exists now check for password
-      //           if (data.response.items[0].password === formData.password) {
-      //             //User verified Open Dashboard and save into localstorage
-      //             localStorage.setItem(
-      //               "register",
-      //               JSON.stringify({ username: data.response.items[0].username })
-      //             );
-      //           } else {
-      //             //Password is wrong try again
-      //             alert(`Wrong password please try again`);
-      //           }
-      //         } else {
-      //           //User not exists alert
-      //           alert(
-      //             `No email registered with ${formData.email} . Please contact the owner`
-      //           );
-      //         }
-      //       }
-      //     }
-      //   );
+      makeApiCall("POST", "geta/instructor", { id: formData.email }).then(
+        (data) => {
+          if (data?.success) {
+            if (data.response.count > 0) {
+              //Email exists now check for password
+              if (data.response.items[0].password === formData.password) {
+                //User verified Open Dashboard and save into localstorage
+                localStorage.setItem(
+                  "instructor",
+                  JSON.stringify({
+                    username: data.response.items[0].name,
+                    email: data.response.items[0].email,
+                  })
+                );
+                navigate("/instructor");
+              } else {
+                //Password is wrong try again
+                alert(`Wrong password please try again`);
+              }
+            } else {
+              //User not exists alert
+              alert(
+                `No email registered with ${formData.email} . Please contact the owner`
+              );
+            }
+          }
+        }
+      );
     } catch (error) {
       alert(error);
     }

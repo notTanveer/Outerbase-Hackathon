@@ -5,9 +5,10 @@ import { AiOutlineHeart } from "react-icons/ai";
 import "./navbar.scss";
 import NavItemMobile from "./naver";
 
-function Navbar({ register }) {
+function Navbar({ register, instructor }) {
   const [shownav, setShowNav] = useState(false);
   const navigate = useNavigate();
+  console.log(instructor);
   // useEffect(() => {
   //   if (register) {
   //     navigate("/student");
@@ -23,7 +24,7 @@ function Navbar({ register }) {
           <Link to="/">ScholarSphere</Link>
         </div>
         <div className="all-links">
-          {register && <Link to="/student">Student</Link>}
+          {register && <Link to="/student">Dashboard</Link>}
           {register && <Link to="/course">Courses</Link>}
           <Link to="/community">Community</Link>
           <Link to="/library">Library</Link>
@@ -42,7 +43,9 @@ function Navbar({ register }) {
           <div className="icon-container">
             <CgProfile />
             <div className="username">
-              {JSON.parse(localStorage.getItem("register")).username}
+              {instructor
+                ? JSON.parse(localStorage.getItem("instructor")).username
+                : JSON.parse(localStorage.getItem("register")).username}
             </div>
           </div>
         )}
