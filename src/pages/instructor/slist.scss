@@ -1,0 +1,78 @@
+@import "../../css-config/mixins.scss";
+.student-list-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+
+  .wrapper {
+    // background-color: #fff;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      //   background-color: #fff;
+      //   border: 1px solid #ccc;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      .your-students {
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .course-name {
+        font-size: 20px;
+        color: #007bff;
+      }
+    }
+
+    .list-container {
+      background-color: #ffe;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      overflow-y: auto; /* Enable vertical scrolling for content */
+      max-height: 600px;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        align-items: center;
+        background-color: #fff;
+        transition: all 0.3s ease-out;
+        border-bottom: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        @include md {
+        }
+        &:hover {
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .text-fields {
+          .name {
+            font-weight: bold;
+            font-size: 22px;
+          }
+
+          .username {
+            color: #777;
+          }
+        }
+
+        .send-mail {
+          cursor: pointer;
+          color: #007bff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

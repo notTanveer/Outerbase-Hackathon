@@ -14,19 +14,18 @@ function StudentDashboard() {
   useEffect(() => {
     makeApiCall("POST", "geta/student", { id: myEmail }).then((data) => {
       setStudentData(data);
-      console.log(data.response.items[0].batch_enrolled);
-
-      makeApiCall("POST", "detailsincourse", {
-        id: data.response.items[0].batch_enrolled.toString(),
-      }).then((datas) => {
-        console.log(datas);
-        // const pppp = JSON.parse(datas.response.items[0].upcoming);
-        // console.log(pppp.devops[0].name);
-        setCourseData(datas);
-      });
+      if (data) {
+        makeApiCall("POST", "detailsincourse", {
+          id: data.response.items[0].batch_enrolled.toString(),
+        }).then((datas) => {
+          // const pppp = JSON.parse(datas.response.items[0].upcoming);
+          // console.log(pppp.devops[0].name);
+          setCourseData(datas);
+        });
+      }
     });
   }, []);
-  if (!courseData) return <div>Loading</div>;
+  if (!courseData) return <div className="loading">Loading</div>;
   return (
     <div className="student-dashboard">
       <div className="main-page">
