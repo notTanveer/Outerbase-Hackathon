@@ -14,6 +14,10 @@ const ResourcePage = () => {
       }
     });
   }, []);
+  // console.log(sId);
+  console.log(rrData);
+  const ls = [];
+
   if (!rrData) return <div className="loading">Loading</div>;
   return (
     <div className="main-screen-resource">
@@ -24,12 +28,12 @@ const ResourcePage = () => {
           {rrData.map((item) => (
             <div
               className="list-item"
-              key={item.id}
+              key={item.sid}
               style={{
-                backgroundColor: sId === item.id && "darkblue",
+                backgroundColor: sId === item.sid && "darkblue",
               }}
               onClick={() => {
-                setsId(item.id);
+                setsId(item.sid);
               }}
             >
               {item.header_list}

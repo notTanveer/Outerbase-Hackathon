@@ -1,6 +1,7 @@
 @import "../../../css-config/mixins.scss";
 
 .main-screen-resource {
+  margin-top: 59px;
   .container-resource {
     display: flex;
     flex-direction: row;
@@ -39,9 +40,20 @@
       padding: 10px;
       border: 1px solid #ddd;
       text-wrap: wrap;
+      overflow-wrap: normal;
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
+      pre {
+        background-color: #ccc;
+        padding: 1rem;
+        margin: 1rem;
+        white-space: pre-wrap;
+      }
+      img {
+        max-width: 800px;
+        max-height: 400px;
+      }
     }
   }
 }

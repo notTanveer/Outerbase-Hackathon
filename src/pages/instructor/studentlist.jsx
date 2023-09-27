@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./slist.scss";
 import makeApiCall from "../../utils/apiCall";
+import { GoMail } from "react-icons/go";
 
 const StudentList = ({ courseEn }) => {
   const [Slis, setslist] = useState();
@@ -28,7 +29,11 @@ const StudentList = ({ courseEn }) => {
                 <div className="name">{item.name}</div>
                 <div className="username">{item.username}</div>
               </div>
-              <div className="send-mail">Mail Icon</div>
+              <div className="send-mail">
+                <a href={"mailto:" + item.email}>
+                  <GoMail />
+                </a>
+              </div>
             </div>
           ))}
         </div>

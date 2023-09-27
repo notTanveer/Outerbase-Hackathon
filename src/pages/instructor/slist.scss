@@ -66,10 +66,15 @@
 
         .send-mail {
           cursor: pointer;
-          color: #007bff;
+          font-size: 22px;
+          a {
+            color: #007bff;
+          }
 
           &:hover {
-            text-decoration: underline;
+            // text-decoration: underline;
+            color: #439eff;
+            font-size: 24px;
           }
         }
       }
