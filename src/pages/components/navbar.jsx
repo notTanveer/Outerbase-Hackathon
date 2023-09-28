@@ -26,9 +26,7 @@ function Navbar({ register, instructor }) {
         <div className="all-links">
           {register && <Link to="/student">Dashboard</Link>}
           {register && <Link to="/course">Courses</Link>}
-          <Link to="/community">Community</Link>
           <Link to="/library">Library</Link>
-          {register && <Link to="/chat">Chat</Link>}
         </div>
         {!register ? (
           <div className="login">

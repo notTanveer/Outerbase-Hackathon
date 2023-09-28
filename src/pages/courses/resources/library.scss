@@ -7,13 +7,16 @@ $font-family: Arial, sans-serif;
 
 // Styles for the main container
 .main-container {
-  margin-top: 59px;
+  margin-top: 50px;
   font-family: $font-family;
-  min-height: 93.7vh;
+  min-height: 94.2vh;
   text-align: center;
-  padding: 40px;
-  padding-top: 10px;
   background: linear-gradient(303deg, #b63376 5%, #1d0f4a 57%);
+  @include md {
+    padding: 40px;
+    padding-top: 10px;
+    min-height: 93.7vh;
+  }
 
   .main-header {
     display: flex;
@@ -23,27 +26,38 @@ $font-family: Arial, sans-serif;
     padding: 10px;
     box-shadow: 0 8px 10px rgba($color: #000000, $alpha: 0.7);
     align-items: center;
-    padding-left: 30px;
+    @include md {
+      padding-left: 30px;
+    }
     // Styles for the heading
     .heading {
-      font-size: 34px;
+      font-size: 24px;
       color: $primary-color;
       font-weight: bold;
+      @include md {
+        font-size: 34px;
+      }
     }
 
     // Styles for the search box
     .search-box {
       display: flex;
-      height: 40px;
+      height: 30px;
       gap: 10px;
       margin: auto;
       font-size: 20px;
+      @include md {
+        height: 40px;
+      }
       input {
-        width: 400px;
+        width: 100%;
         font-size: inherit;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        @include md {
+          width: 400px;
+        }
       }
 
       .search-icon {
@@ -57,39 +71,60 @@ $font-family: Arial, sans-serif;
   }
 
   // Styles for the sub-heading
-  .sub-heading {
+  .head-sub-heading {
     font-size: 16px;
     color: #fff;
+    display: none;
+    @include md {
+      display: inline;
+    }
   }
 
   // Styles for the catalog holder
   .catalog-holder {
+    padding: 10px;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 70px;
-    padding: 20px 100px;
-    border-radius: 10px;
+
+    @include md {
+      margin-top: 70px;
+      padding: 20px 100px;
+      border-radius: 10px;
+    }
 
     // Styles for the container within the catalog holder
     .container {
       text-align: left;
       padding: 20px;
+      // margin: 10px;
       border-radius: 20px;
       align-items: center;
       justify-content: space-evenly;
       display: flex;
+      flex-direction: column;
       gap: 20px;
       background-color: #111;
       cursor: pointer;
       transition: all 0.4s;
+      width: fit-content;
       &:hover {
         box-shadow: 0 7px 10px #ffffffaa;
+      }
+      @include md {
+        flex-direction: row;
       }
       .image-place {
         img {
           // max-height: 200px;
-          width: 400px;
+          max-width: 320px;
+
+          @include md {
+            // width: 400px;
+
+            max-width: 400px;
+          }
         }
       }
       .text-place {

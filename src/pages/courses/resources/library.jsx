@@ -21,7 +21,7 @@ function Library() {
     <div className="main-container">
       <div className="main-header">
         <div className="heading">Library</div>
-        <div className="sub-heading">
+        <div className="head-sub-heading">
           A full packed Resource to meet all your needs in one place
         </div>
         <div className="search-box">

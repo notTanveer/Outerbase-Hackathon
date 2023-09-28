@@ -5,8 +5,6 @@ import StartUpPage from "./pages/StartUpPage";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "./pages/components/navbar";
 import Library from "./pages/courses/resources/library";
-import Chat from "./pages/chat/interface";
-import ChatApp from "./pages/chat/server";
 import Registration from "./pages/Registration";
 import LoginPage from "./pages/login";
 import UserRegistration from "./pages/UserRegistration/UserRegistration";
@@ -46,7 +44,6 @@ function App() {
           {courseSelected && (
             <Route path="/student" element={<StudentDashboard />} />
           )}
-          {courseSelected && <Route path="/chat" element={<Chat />} />}
           {token && (
             <Route
               path="/register"

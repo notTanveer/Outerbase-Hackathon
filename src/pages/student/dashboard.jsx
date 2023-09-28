@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./student.scss";
 import Routine from "./Routine";
 import Syllabus from "./Syllabus/Syllabus";
-import FeeStructure from "./Fee_Structure";
 import Learn from "./Learn/learn";
 import makeApiCall from "../../utils/apiCall";
 import Message from "./Message";
