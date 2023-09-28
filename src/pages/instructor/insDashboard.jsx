@@ -65,6 +65,7 @@ const InstructorDashboard = () => {
         <EventEdit
           data={courseData?.response.items[0].upcoming}
           setshow={setEventEditMode}
+          courseNumber={courseData?.response.items[0].details_id}
         />
       )}
     </div>

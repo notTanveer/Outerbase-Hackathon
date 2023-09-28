@@ -1,7 +1,7 @@
 import React from "react";
 import Routine from "../student/Routine";
 import { MdClose } from "react-icons/md";
-const EventEdit = ({ data, setshow }) => {
+const EventEdit = ({ data, setshow, courseNumber }) => {
   return (
     <div className="event-edit-panel">
       <div className="op-layer">
@@ -19,7 +19,7 @@ const EventEdit = ({ data, setshow }) => {
             </span>
           </div>
           <div className="rt-container">
-            <Routine isEdit={true} routine={data} />
+            <Routine isEdit={true} routine={data} courseNumber={courseNumber} />
           </div>
         </div>
       </div>
