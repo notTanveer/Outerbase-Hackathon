@@ -6,7 +6,9 @@
   }
   .routine-container {
     gap: 10px;
+    // max-width: 90%;
     display: flex;
+    margin-right: 5px;
     flex-direction: column;
     .item-wrapper {
       display: flex;
@@ -19,7 +21,7 @@
       }
       // padding-right: 40px;
       .main-item {
-        width: 100%;
+        // width: 100%;
         border-radius: 10px;
         margin-right: 10px;
         display: flex;

@@ -50,10 +50,13 @@
       }
       .syllabus-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 20px;
-        padding: 20px;
-        padding-top: 10px;
+        padding: 10px;
+        @include md {
+          flex-direction: row;
+          padding: 20px;
+        }
       }
 
       .subject-list {
@@ -160,13 +163,21 @@
       }
       .message-to-user {
         background-color: #f0f0f0;
-        padding: 20px;
+        padding: 10px;
+        // max-width: 80%;
+        margin-right: 10px;
+        @include md {
+          padding: 20px;
+        }
 
         .container {
           background-color: #fff;
-          padding: 20px;
+          padding: 10px;
           border-radius: 5px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          @include md {
+            padding: 20px;
+          }
 
           .heading {
             font-size: 20px;
