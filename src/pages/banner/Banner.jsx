@@ -58,7 +58,7 @@ function HomeBanner({ register }) {
           alt="A photo for Scholar sphere"
         />
       </div>
-    </div>
+     </div>
   );
 }
 
