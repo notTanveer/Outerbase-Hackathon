@@ -3,8 +3,6 @@ import React from "react";
 import "./StartUpPage.scss";
 import { useNavigate } from "react-router-dom";
 import HomeBanner from "./banner/Banner";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
 
 function StartUpPage({ register }) {
   const navigate = useNavigate();
