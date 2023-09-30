@@ -1,3 +1,5 @@
+@import "../css-config/mixins.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +7,14 @@
   border: none;
 }
 .page {
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
   font-family: Poppins-Regular, sans-serif;
-  width: 100%;
-  margin: 0 auto;
   .main-content {
-    min-height: 100vh;
+    min-height: 101vh;
     display: flex;
+    // height: 1200px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -27,21 +25,34 @@
       rgba(29, 15, 74, 1) 57%
     );
     .wrapper {
-      width: 960px;
-      height: 700px;
+      margin-top: 51px;
+      // height: 700px;
       align-items: center;
-      padding: 6rem;
+      padding: 2rem 20px;
       background: #fff;
       border-radius: 18px;
-      overflow: hidden;
+      // overflow: hidden;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: space-between;
+      @include md {
+        width: 960px;
+        flex-direction: row;
+        padding: 6rem;
+      }
       .login-pic {
-        width: 316px;
+        max-width: 206px;
+        @include md {
+          max-width: 316px;
+        }
         img {
           max-width: 100%;
           vertical-align: middle;
+          margin: 0 auto;
+          margin-bottom: 10px;
+          @include md {
+            margin: 0;
+          }
         }
       }
       form {
@@ -68,11 +79,15 @@
             color: #666;
             display: block;
             width: 100%;
+            // width: 250px;
             background: #e6e6e6;
             height: 50px;
             border: none;
             border-radius: 25px;
             padding: 0 30px 0 68px;
+            @include md {
+              padding: 0 30px 0 68px;
+            }
           }
           .focus-input100 {
             display: block;
@@ -142,10 +157,13 @@
           }
         }
         .create-acc {
-          margin-top: 140px;
+          margin-top: 20px;
           text-align: center;
           font-size: 18px;
           color: #666;
+          @include md {
+            margin-top: 140px;
+          }
           cursor: pointer;
           &:hover {
             color: #57b846;
@@ -165,25 +183,7 @@
     font-size: 20px;
   }
 }
-@media (max-width: 768px) {
-  .wrap-login100 {
-    padding: 100px 80px 33px 80px;
-  }
 
-  .login100-pic {
-    display: none;
-  }
-
-  .login100-form {
-    width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  .wrap-login100 {
-    padding: 100px 15px 33px 15px;
-  }
-}
 @keyframes anim-shadow {
   to {
     box-shadow: 0px 0px 70px 25px;

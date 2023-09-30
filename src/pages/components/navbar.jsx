@@ -1,27 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { AiOutlineHeart } from "react-icons/ai";
 import "./navbar.scss";
+import NavItemMobile from "./naver";
 
-function Navbar({ token, register }) {
+function Navbar({ register, instructor }) {
+  const [shownav, setShowNav] = useState(false);
   const navigate = useNavigate();
+  console.log(instructor);
   // useEffect(() => {
   //   if (register) {
   //     navigate("/student");
   //   }
   // }, []);
   return (
-    <div className="content">
-      <div className="navbar">
+    <>
+      <div className="nav-navbar">
         <div className="logo">
+          <div className="drawer-opener" onClick={() => setShowNav(!shownav)}>
+            {!shownav ? <AiOutlineHeart /> : <CgProfile />}
+          </div>
           <Link to="/">ScholarSphere</Link>
         </div>
         <div className="all-links">
-          {token && <Link to="/student">Student</Link>}
-          <Link to="/course">Courses</Link>
-          <Link to="/community">Community</Link>
+          {register && <Link to="/student">Dashboard</Link>}
+          {register && <Link to="/course">Courses</Link>}
           <Link to="/library">Library</Link>
-          {token && <Link to="/chat">Chat</Link>}
         </div>
         {!register ? (
           <div className="login">
@@ -36,12 +41,16 @@ function Navbar({ token, register }) {
           <div className="icon-container">
             <CgProfile />
             <div className="username">
-              {JSON.parse(localStorage.getItem("register")).username}
+              {instructor
+                ? JSON.parse(localStorage.getItem("instructor")).username
+                : JSON.parse(localStorage.getItem("register")).username}
             </div>
           </div>
         )}
       </div>
-    </div>
+
+      {shownav && <NavItemMobile register={register} setShowNav={setShowNav} />}
+    </>
   );
 }
 

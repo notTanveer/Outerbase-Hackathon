@@ -2,28 +2,39 @@
 
 $primary: #6979d3;
 $cont: #1d0f4a;
-// Define styles for the content container
-.content {
-  position: sticky;
+.nav-navbar {
+  position: fixed;
   top: 0;
-  z-index: 1000;
-}
-
-// Define styles for the navbar
-.navbar {
+  color: white;
+  z-index: 99;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 100px;
+  padding: 10px 10px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
   background: rgb(182, 51, 118);
-  z-index: 1000;
+  @include md {
+    padding: 10px 100px;
+  }
 }
 
 // Define styles for the logo
 .logo {
-  font-size: 30px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 24px;
   font-weight: bold;
+  svg {
+    display: inline;
+    @include md {
+      display: none;
+    }
+  }
+  @include md {
+    font-size: 30px;
+  }
   a {
     text-decoration: none;
     color: #ffffff;
@@ -32,8 +43,11 @@ $cont: #1d0f4a;
 
 // Define styles for the links in the navbar
 .all-links {
-  display: flex;
+  display: none;
   gap: 30px;
+  @include md {
+    display: flex;
+  }
   a {
     text-decoration: none;
     transition: 0.5s;
@@ -89,18 +103,80 @@ $cont: #1d0f4a;
       background-color: #ffd07e;
     }
   }
+  .login-button {
+    display: none;
+    @include md {
+      display: inline;
+    }
+  }
 }
 .icon-container {
   display: flex;
-  font-size: 35px;
+  font-size: 25px;
+  padding: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: white;
   font-weight: 800;
-  gap: 10px;
+  gap: 2px;
   cursor: pointer;
   align-items: center;
+  border-radius: 10px;
+  &:hover {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+  }
+  @include md {
+    gap: 5px;
+    padding: 6px;
+  }
   div {
-    font-size: 18px;
+    font-size: 14px;
     font-family: fantasy serif;
     font-weight: 500;
+    @include md {
+      font-size: 18px;
+    }
+  }
+}
+
+// Naver compo
+.mobile-content {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  .list {
+    width: 100%;
+    height: 100%;
+    background: #1d0f4a;
+    position: relative;
+    padding: 1.2rem;
+    z-index: 1;
+    color: white;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slidenav 0.4s ease forwards;
+    .item {
+      font-size: 20px;
+      background: #b63376;
+
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+@keyframes slidenav {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

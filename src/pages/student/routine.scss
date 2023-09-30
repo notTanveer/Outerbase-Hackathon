@@ -1,0 +1,119 @@
+.routine-main {
+  .heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .routine-container {
+    gap: 10px;
+    // max-width: 90%;
+    display: flex;
+    margin-right: 5px;
+    flex-direction: column;
+    .item-wrapper {
+      display: flex;
+      .delete-icon {
+        margin: auto;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        color: red;
+      }
+      // padding-right: 40px;
+      .main-item {
+        // width: 100%;
+        border-radius: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+        background-color: rgb(0, 255, 238);
+        .time {
+          font-size: 12px;
+        }
+        .subject-name {
+          font-size: 20px;
+          font-weight: 700;
+        }
+        .teacher-info {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .add {
+    margin-top: 10px;
+    // background-color: #eee;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      gap: 10px;
+      background-color: #ccc;
+
+      input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 300px;
+        font-size: 16px;
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 300px;
+        font-size: 16px;
+        height: 100px;
+        resize: none;
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+    .save-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+
+      padding: 10px 20px;
+      margin-top: 10px;
+      // margin-right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}

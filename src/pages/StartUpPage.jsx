@@ -6,7 +6,7 @@ import HomeBanner from "./banner/Banner";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 
-function StartUpPage() {
+function StartUpPage({ register }) {
   const navigate = useNavigate();
   const testimonialData = [
     {
@@ -26,66 +26,30 @@ function StartUpPage() {
   ];
   return (
     <div className="dashboard">
-      <HomeBanner />
-      <header>
-        <h1 className="logo">ScholarSphere</h1>
-      </header>
-      <main>
-        <section className="quick-links">
-          <nav className="navbar">
-            <ul className="nav-list">
-              <li className="nav-item" onClick={() => navigate("/courses")}>
-                <a>Courses</a>
-              </li>
-              <li className="nav-item" onClick={() => navigate("/grades")}>
-                <a>Grades</a>
-              </li>
-              <li className="nav-item" onClick={() => navigate("/calendar")}>
-                <a>Academic Calendar</a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-
-        <section className="announcements">
-          <h2>Announcements</h2>
-          <ul>
-            <li>Fall Semester Registration opens June 1st</li>
-            <li>New library hours starting September 1st</li>
-          </ul>
-        </section>
-
-        <section className="resources">
-          <h2>Campus Resources</h2>
-          <nav className="navbar">
-            <ul className="nav-list">
-              <li className="nav-item">
-                <a href="/writing-center">Writing Center</a>
-              </li>
-              <li className="nav-item">
-                <a href="/tutoring">Tutoring</a>
-              </li>
-              <li className="nav-item">
-                <a href="/counseling">Counseling</a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-        <section className="testimonials">
-          <h2>Testimonials</h2>
-          <div className="testimonials-list">
-            {testimonialData.map((testimonial, i)=>(
-              <Testimonials 
-                key={i}
-                name={testimonial.name}
-                text={testimonial.text}
-                image={testimonial.image}/>
-
-            ))}
+      <HomeBanner register={register} />
+      <div className="login-as-instructor">
+        <div className="text-content">
+          <div className="heading">Want to be an Instructor</div>
+          <p>
+            Are you a Instructor Just Login with your credentials and Get
+            connected to the
+          </p>
+          <div className="ctas">
+            <div
+              className="banner-cta"
+              onClick={() => navigate("/instructor/login")}
+            >
+              Instructor Login
+            </div>
+            <div
+              className="banner-cta v2"
+              onClick={() => navigate("/instructor")}
+            >
+              Instructor Dashboard
+            </div>
           </div>
-        </section>
-      </main>
-      <Footer/>
+        </div>
+      </div>
     </div>
   );
 }
