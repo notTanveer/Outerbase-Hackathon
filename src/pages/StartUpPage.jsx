@@ -8,22 +8,7 @@ import Footer from "./components/Footer";
 
 function StartUpPage({ register }) {
   const navigate = useNavigate();
-  const testimonialData = [
-    {
-      text: "I love this product! It's changed my life.",
-      name: "John Doe",
-      image: "john-doe.jpg",
-    },
-    {
-      text: "Highly recommended. Excellent quality.",
-      name: "Jane Smith",
-      image: "jane-smith.jpg",
-    },
-    {
-      text: "Outstanding service and support!",
-      name: "Bob Johnson",
-    },
-  ];
+
   return (
     <div className="dashboard">
       <HomeBanner register={register} />
