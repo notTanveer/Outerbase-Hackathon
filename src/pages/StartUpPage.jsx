@@ -4,6 +4,7 @@ import "./StartUpPage.scss";
 import { useNavigate } from "react-router-dom";
 import HomeBanner from "./banner/Banner";
 import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
 function StartUpPage() {
   const navigate = useNavigate();
@@ -84,6 +85,7 @@ function StartUpPage() {
           </div>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }
