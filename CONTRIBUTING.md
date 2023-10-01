@@ -6,7 +6,7 @@ Please take a moment to review this document to understand how you can contribut
 
 ## Reporting Issues
 
-If you encounter any issues or have suggestions for improvements, please open an issue on our [GitHub repository](https://github.com/yourusername/ed-tech-platform/issues). When creating an issue, please provide the following information:
+If you encounter any issues or have suggestions for improvements, please open an issue on our GitHub repository. When creating an issue, please provide the following information:
 
 - A clear and concise description of the issue or suggestion.
 - Steps to reproduce the issue if applicable.
@@ -23,3 +23,4 @@ We encourage you to contribute code to the project. To do so, please follow thes
 
    ```shell
    git checkout -b feature/your-feature-name
+   ```

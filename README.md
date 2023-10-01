@@ -1,8 +1,8 @@
-# Ed-Tech Platform
+# Scholar Sphere
 
 ## Introduction
 
-Welcome to the Ed-Tech Platform project! This platform is designed to provide users with hands-on learning opportunities, access to teachers, and the ability to monitor their performance. It also offers a wide range of educational resources to support learning.
+Welcome to the Scholar Sphere! This platform is designed to provide users with hands-on learning opportunities, access to instructors, and the ability to monitor their performance. It also offers a wide range of educational resources to support learning.
 
 ## Table of Contents
 
@@ -31,18 +31,24 @@ Follow these steps to get started with the Ed-Tech Platform:
    git clone https://github.com/notTanveer/Outerbase-Hackathon.git
    cd Outerbase-Hackathon
 
+   ```
+
 2. Install Dependecies
+
    ```shell
    npm install
-   npm install express socket.io
+
+   ```
 
 3. Configure the platform settings, such as database connection, API keys, and environment variables. You can find the configuration files in the /config directory.
 
 4. Start the application:
    ```shell
    npm start
+   ```
 
 ## Usage
+
 - Register or log in to your account.
 - Explore the available courses and resources.
 - Join live sessions with teachers for interactive learning.
@@ -55,26 +61,17 @@ Follow these steps to get started with the Ed-Tech Platform:
 
 - HTML, CSS, JavaScript
 - [React.js](https://reactjs.org/) for the user interface
-- [Redux](https://redux.js.org/) for state management
-- [Axios](https://axios-http.com/) for API communication
 
 ### Backend:
 
-- [Mailgun](https://www.mailgun.com/) for email verification
-- [Node.js](https://nodejs.org/) for server-side development
-- [Express.js](https://expressjs.com/) for building RESTful APIs
-- [MongoDB](https://www.mongodb.com/) for data storage
+- [Outerbase](https://beta.outerbase.com/) for email verification
 
 ### Authentication:
 
-- [JSON Web Tokens (JWT)](https://jwt.io/) for user authentication
-
-### Deployment:
-
-- [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) for containerization and orchestration
-- [Azure Cloud Services](https://azure.microsoft.com/) for cloud hosting
+- [Supabase](https://supabase.com/) for user authentication
 
 ## Contributing
+
 - We welcome contributions from the community!
 - If you'd like to contribute to the project, please follow our Contribution Guidelines.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
@@ -82,8 +79,3 @@ Follow these steps to get started with the Ed-Tech Platform:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-
-
-
